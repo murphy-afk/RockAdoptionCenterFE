@@ -40,9 +40,6 @@ export default function RockCard({ rock }) {
         {rock.origin_story || "This rock has a mysterious past..."}
       </p>
       <div className="flex justify-between items-center">
-        <span className="text-2xl font-extrabold text-purple-600 drop-shadow-sm">
-          €{rock.price}
-        </span>
         <Link
           to={`/rocks/${rock.id}`}
           className="

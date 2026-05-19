@@ -24,15 +24,17 @@ export default function Header() {
             className="hover:text-purple-900 hover:-translate-y-1 transition">
             Rocks
           </Link>
+          
+          <Link
+            to="/adoptedrocks"
+            className="hover:text-purple-900 hover:-translate-y-1 transition">
+            Adopted rocks
+          </Link>
+          
           <Link
             to="/wishlist"
             className="flex items-center gap-1 hover:text-purple-900 hover:-translate-y-1 transition">
             <FaHeart className="text-red-500" /> Wishlist
-          </Link>
-          <Link
-            to="/cart"
-            className="flex items-center gap-1 hover:text-purple-900 hover:-translate-y-1 transition">
-            <FaShoppingCart className="text-purple-700" /> Cart
           </Link>
         </nav>
       </div>
