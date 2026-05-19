@@ -1,19 +1,27 @@
 
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css'
-import axios from 'axios'
+
+import AllRocks from './pages/AllRocks';
+import Home from './pages/Home';
+import RockDetail from './pages/RockDetail';
+import AppLayout from './layouts/AppLayout';
 
 function App() {
 
-  axios.get('http://127.0.0.1:8000/api/rocks')
-  .then(response => {
-    console.log(response.data);
-  })
 
 
   return (
     <>
-      <h1>Rock Adoption Center</h1>
-      
+      <BrowserRouter>
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route path='/' element={<Home />} />
+            <Route path='/rocks' element={<AllRocks />} />
+            <Route path='/rocks/:id' element={<RockDetail />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
