@@ -1,29 +1,28 @@
-
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import GlobalProvider from "./context/GlobalProvider";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import AllRocks from "./pages/AllRocks";
+import RockDetail from "./pages/RockDetail";
+import Cart from "./pages/Cart";
+import Wishlist from "./pages/Wishlist";
+import AppLayout from "./layouts/AppLayout";
 import './App.css'
 
-import AllRocks from './pages/AllRocks';
-import Home from './pages/Home';
-import RockDetail from './pages/RockDetail';
-import AppLayout from './layouts/AppLayout';
-
-function App() {
-
-
-
+export default function App() {
   return (
-    <>
-      <BrowserRouter>
+    <GlobalProvider>
+      <Router>
+
         <Routes>
           <Route element={<AppLayout />}>
-            <Route path='/' element={<Home />} />
-            <Route path='/rocks' element={<AllRocks />} />
-            <Route path='/rocks/:id' element={<RockDetail />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/rocks" element={<AllRocks />} />
+            <Route path="/rocks/:id" element={<RockDetail />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/wishlist" element={<Wishlist />} />
           </Route>
         </Routes>
-      </BrowserRouter>
-    </>
+      </Router>
+    </GlobalProvider>
   )
 }
-
-export default App
