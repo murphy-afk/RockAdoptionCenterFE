@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom"
 import axios from "axios"
-import { useCart } from "../context/CartContext"
 import { useWishlist } from "../context/WishlistContext"
 
 export default function RockDetail() {
   const { id } = useParams()
   const [rock, setRock] = useState(null)
   const { toggleWishlist, wishlist } = useWishlist();
-  const { addToCart } = useCart()
+  const [selectedImage, setSelectedImage] = useState(null);
+
 
   useEffect(() => {
     axios.get(`http://127.0.0.1:8000/api/rocks/${id}`).then((res) => {
@@ -24,11 +24,29 @@ export default function RockDetail() {
 
         <div className="w-full h-80 rounded-3xl overflow-hidden border-4 border-purple-200 bg-gradient-to-br from-pink-100 to-purple-100 mb-6">
           <img
-            src={rock.image_url || "https://picsum.photos/800"}
+            src={rock.image_url
+              ? `http://127.0.0.1:8000/storage/${rock.image_url}`
+              : 'https://picsum.photos/800'
+            }
             alt={rock.name}
-            className="w-full h-full object-cover rounded-2xl"/>
+            className="
+            w-full h-full object-cover object-center rounded-xl
+            group-hover:scale-110 transition-transform duration-300"
+            onClick={() => setSelectedImage(
+              `http://127.0.0.1:8000/storage/${rock.image_url}`
+            )} />
         </div>
-
+        {selectedImage && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+            onClick={() => setSelectedImage(null)}
+          >
+            <img
+              src={selectedImage}
+              className="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl"
+            />
+          </div>
+        )}
         <h1 className="text-5xl font-extrabold text-purple-700 mb-4 drop-shadow-sm">
           {rock.name}
         </h1>
@@ -48,6 +66,16 @@ export default function RockDetail() {
           {rock.rarity && (
             <span className="px-4 py-2 bg-yellow-200 text-yellow-700 font-bold rounded-xl border-2 border-yellow-400">
               Rarity: {rock.rarity.name}
+            </span>
+          )}
+          {rock.color && (
+            <span className="px-4 py-2 bg-yellow-200 text-yellow-700 font-bold rounded-xl border-2 border-yellow-400">
+              Color: {rock.color}
+            </span>
+          )}
+          {rock.texture && (
+            <span className="px-4 py-2 bg-yellow-200 text-yellow-700 font-bold rounded-xl border-2 border-yellow-400">
+              Texture: {rock.texture}
             </span>
           )}
         </div>

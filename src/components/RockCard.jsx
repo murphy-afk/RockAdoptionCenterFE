@@ -22,7 +22,10 @@ export default function RockCard({ rock }) {
           flex items-center justify-center
           border-4 border-purple-200">
         <img
-          src={rock.image_url || 'https://picsum.photos/300'}
+          src={rock.image_url
+            ? `http://127.0.0.1:8000/storage/${rock.image_url}`
+            : 'https://picsum.photos/300'
+          }
           alt={rock.name}
           className="
             w-full h-full object-cover rounded-xl

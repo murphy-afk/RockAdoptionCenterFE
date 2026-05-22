@@ -30,12 +30,16 @@ export default function Wishlist() {
                 key={item.id}
                 className="bg-white p-5 rounded-3xl border-4 border-pink-400 shadow-[4px_4px_0px_#f9a8d4] flex gap-6">
                 <img
-                  src={item.image_url || 'https://picsum.photos/300'}
+                  src={item.image_url
+                    ? `http://127.0.0.1:8000/storage/${item.image_url}`
+                    : 'https://picsum.photos/300'
+                  }
                   alt={item.name}
-                  className="w-32 h-32 rounded-2xl object-cover border-4 border-pink-300" />
+                  className="
+                  w-full h-full object-cover rounded-xl
+                  group-hover:scale-110 transition-transform duration-300"/>
                 <div className="flex-1">
                   <h2 className="text-3xl font-bold text-pink-600">{item.name}</h2>
-                  <p className="text-pink-500 font-semibold">€{item.price}</p>
                 </div>
                 <div className="flex gap-4 mt-4">
                   <button

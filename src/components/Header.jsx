@@ -11,7 +11,7 @@ export default function Header() {
         <Link
           to="/"
           className="text-3xl font-extrabold text-purple-700 drop-shadow-sm hover:scale-105 transition">
-          PetRock ✨
+          Pet Rocks Adoption Center✨
         </Link>
         <nav className="flex items-center gap-6 text-lg font-bold text-purple-700">
           <Link

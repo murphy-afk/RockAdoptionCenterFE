@@ -29,11 +29,15 @@ export default function Success() {
         </h1>
 
         <div className="w-full h-72 rounded-3xl overflow-hidden border-4 border-purple-200 bg-gradient-to-br from-purple-100 to-pink-100 mb-8">
-          <img
-            src={rock.image_url || 'https:picsum.photos/800'}
-            alt={rock.name}
-            className="w-full h-full object-cover rounded-2xl"
-          />
+        <img
+          src={rock.image_url
+            ? `http://127.0.0.1:8000/storage/${rock.image_url}`
+            : 'https://picsum.photos/800'
+          }
+          alt={rock.name}
+          className="
+            w-full h-full object-cover rounded-xl
+            group-hover:scale-110 transition-transform duration-300"/>
         </div>
 
         <p className="text-lg text-gray-700 mb-8 leading-relaxed">
