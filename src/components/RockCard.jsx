@@ -24,7 +24,7 @@ export default function RockCard({ rock }) {
         <img
           src={rock.image_url
             ? `http://127.0.0.1:8000/storage/${rock.image_url}`
-            : 'https://picsum.photos/300'
+            : 'http://127.0.0.1:8000/storage/img/placeholder.jpg'
           }
           alt={rock.name}
           className="

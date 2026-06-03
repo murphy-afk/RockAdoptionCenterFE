@@ -25,19 +25,19 @@ export default function AllRocks() {
   if (error) return <div className="text-center py-20 text-red-500">{error}</div>;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-100 to-purple-200 py-14">
-      <div className="max-w-6xl mx-auto px-4">
-        <h1 className="text-6xl font-extrabold text-purple-700 mb-12 text-center drop-shadow-lg">
-          Adopt a Pet Rock
-        </h1>
+    <div className="max-w-6xl mx-auto px-4">
+  <div className="bg-white/60 backdrop-blur-xl rounded-3xl p-10 shadow-xl border border-white/40">
+    <h1 className="text-6xl font-extrabold text-purple-700 mb-12 text-center drop-shadow-lg">
+      Adopt a Pet Rock
+    </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-          {rocks.map((rock) => (
-            <RockCard key={rock.id} rock={rock} />
-          ))}
-        </div>
-      </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      {rocks.map((rock) => (
+        <RockCard key={rock.id} rock={rock} />
+      ))}
     </div>
+  </div>
+</div>
 
   );
 }

@@ -8,6 +8,10 @@ export default function AdoptRock() {
   const [rock, setRock] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
+  const pickImage = (url) => url === null
+    ? "http://127.0.0.1:8000/storage/img/placeholder.jpg"
+    : `http://127.0.0.1:8000/storage/${url}`;
+
   useEffect(() => {
     axios.get(`http://127.0.0.1:8000/api/rocks/${id}`).then((res) => {
       setRock(res.data.data);
@@ -20,29 +24,27 @@ export default function AdoptRock() {
     });
   };
 
+
   if (!rock) return <div className="text-center py-20 text-xl">Loading...</div>;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-100 to-purple-200 py-14 px-6">
-      <div className="max-w-4xl mx-auto bg-white p-10 rounded-3xl border-4 border-purple-300 shadow-[6px_6px_0px_#c084fc]">
+    <div className="max-w-6xl mx-auto px-4">
+      <div className="bg-white/60 backdrop-blur-xl rounded-3xl p-10 shadow-xl border border-white/40">
 
-        <div className="w-full h-72 rounded-3xl overflow-hidden border-4 border-purple-200 bg-gradient-to-br from-purple-100 to-pink-100 mb-8">
+        <div className="w-full h-72 rounded-3xl overflow-hidden border-4 border-purple-200 bg-linear-to-br from-purple-100 to-pink-100 mb-8">
           <img
-            src={rock.image_url
-              ? `http://127.0.0.1:8000/storage/${rock.image_url}`
-              : 'https://picsum.photos/300'
-            }
+            src={pickImage(rock.image_url)}
             alt={rock.name}
             className="
             w-full h-full object-cover rounded-xl
             group-hover:scale-110 transition-transform duration-300"
             onClick={() => setSelectedImage(
-              `http://127.0.0.1:8000/storage/${rock.image_url}`
+              pickImage(rock.image_url)
             )} />
         </div>
         {selectedImage && (
           <div
-            className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-[#b5b0ac] rounded flex items-center justify-center z-50"
             onClick={() => setSelectedImage(null)}>
             <img
               src={selectedImage}
@@ -93,7 +95,7 @@ export default function AdoptRock() {
                 <div
                   key={skill.id}
                   className="
-                    px-5 py-3 rounded-2xl bg-gradient-to-br from-green-200 to-green-300
+                    px-5 py-3 rounded-2xl bg-linear-to-br from-green-200 to-green-300
                     border-4 border-green-400 shadow-[3px_3px_0px_#86efac]
                     text-green-800 font-bold text-lg
                     hover:-translate-y-1 hover:rotate-1 transition-all duration-200">
