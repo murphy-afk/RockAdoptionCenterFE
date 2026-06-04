@@ -17,7 +17,7 @@ export default function Home() {
         inline-block px-8 py-4 bg-purple-500 text-white text-xl font-bold rounded-2xl
         border-4 border-purple-300 shadow-[4px_4px_0px_#c084fc]
         hover:shadow-[6px_6px_0px_#a855f7] hover:-translate-y-1 transition-all">
-            Browse Rocks ✨
+            Browse Rocks
           </Link>
         </div>
       </div>

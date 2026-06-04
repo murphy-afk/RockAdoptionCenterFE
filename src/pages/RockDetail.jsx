@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom"
 import axios from "axios"
 import { useWishlist } from "../context/WishlistContext"
+import { PiHeartFill, PiHeartLight } from "react-icons/pi";
 
 export default function RockDetail() {
   const { id } = useParams()
@@ -32,10 +33,10 @@ export default function RockDetail() {
 
 
   return (
-    <div className="max-w-6xl mx-auto px-4">
+    <div className="max-w-6xl mx-auto px-4 my-3">
       <div className="bg-white/60 backdrop-blur-xl rounded-3xl p-10 shadow-xl border border-white/40">
 
-        <div className="w-full h-80 rounded-3xl overflow-hidden border-4 border-purple-200 bg-gradient-to-br from-pink-100 to-purple-100 mb-6">
+        <div className="w-full h-80 rounded-3xl overflow-hidden border-4 border-purple-200 bg-linear-to-br from-pink-100 to-purple-100 mb-6">
           <img
             src={pickImage(rock.image_url)}
             alt={rock.name}
@@ -48,11 +49,11 @@ export default function RockDetail() {
         </div>
         {selectedImage && (
           <div
-            className="fixed inset-0 bg-[#b5b0ac] rounded flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 rounded"
             onClick={() => setSelectedImage(null)}>
             <img
               src={selectedImage}
-              className="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl" />
+              className="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl border-4 border-purple-300" />
           </div>
         )}
 
@@ -102,7 +103,7 @@ export default function RockDetail() {
                 <div
                   key={skill.id}
                   className="
-                  px-5 py-3 rounded-2xl bg-gradient-to-br from-green-200 to-green-300
+                  px-5 py-3 rounded-2xl bg-linear-to-br from-green-200 to-green-300
                   border-4 border-green-400 shadow-[3px_3px_0px_#86efac]
                   text-green-800 font-bold text-lg
                   hover:-translate-y-1 hover:rotate-1 transition-all duration-200
@@ -133,7 +134,7 @@ export default function RockDetail() {
               border-4 border-purple-300 shadow-[4px_4px_0px_#c084fc]
               hover:shadow-[6px_6px_0px_#a855f7] hover:-translate-y-1
               transition-all duration-200">
-              {rock.adopted ? "Already Adopted!" : "Adopt Me 💖"}
+              {rock.adopted ? "Already Adopted!" : "Adopt Me"}
             </Link>
             <button
               onClick={() => toggleWishlist(rock)}
@@ -143,8 +144,8 @@ export default function RockDetail() {
                 hover:shadow-[6px_6px_0px_#ec4899] hover:-translate-y-1
                 transition-all duration-200">
               {wishlist.find((item) => item.id === rock.id)
-                ? "💗 "
-                : "♡"}
+                ? <PiHeartFill className="text-3xl text-red-600" />
+                : <PiHeartLight className="text-3xl" />}
             </button>
           </div>
 

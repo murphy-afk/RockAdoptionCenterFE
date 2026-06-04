@@ -11,11 +11,11 @@ export default function AdoptedRocks() {
 
 
   return (
-    <div className="max-w-6xl mx-auto px-4">
+    <div className="max-w-6xl mx-auto px-4 my-3">
       <div className="bg-white/60 backdrop-blur-xl rounded-3xl p-10 shadow-xl border border-white/40">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl font-extrabold text-purple-700 mb-10 text-center">
-            Our Happy Adopted Rocks 💗
+            Our Happy Adopted Rocks
           </h1>
           {rocks.length === 0 ? (
             <p className="text-center text-purple-600 text-xl">
@@ -39,7 +39,7 @@ export default function AdoptedRocks() {
                   group-hover:scale-110 transition-transform duration-300"/>
                   <h2 className="text-3xl font-bold text-purple-700">{rock.name}</h2>
                   <p className="text-purple-600 mt-2">
-                    Living their best life 💖
+                    Living their best life
                   </p>
                 </div>
               ))}

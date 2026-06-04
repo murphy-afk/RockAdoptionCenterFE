@@ -1,6 +1,8 @@
 
 import { Link } from "react-router-dom";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
+import { BsBluesky } from "react-icons/bs";
+
 
 export default function Header() {
   return (
@@ -10,8 +12,9 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
         <Link
           to="/"
-          className="text-3xl font-extrabold text-purple-700 drop-shadow-sm hover:scale-105 transition">
-          Pet Rocks Adoption Center✨
+          className="flex items-center gap-2 text-3xl font-extrabold text-purple-700 drop-shadow-sm hover:scale-105 transition">
+          <span>Pet Rocks Adoption Center</span>
+          <BsBluesky />
         </Link>
         <nav className="flex items-center gap-6 text-lg font-bold text-purple-700">
           <Link
@@ -24,13 +27,13 @@ export default function Header() {
             className="hover:text-purple-900 hover:-translate-y-1 transition">
             Rocks
           </Link>
-          
+
           <Link
             to="/adoptedrocks"
             className="hover:text-purple-900 hover:-translate-y-1 transition">
             Adopted rocks
           </Link>
-          
+
           <Link
             to="/wishlist"
             className="flex items-center gap-1 hover:text-purple-900 hover:-translate-y-1 transition">

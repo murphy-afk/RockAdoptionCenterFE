@@ -7,10 +7,10 @@ export default function Wishlist() {
   const { addToCart } = useCart();
 
   return (
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10 my-3">
         <div className="bg-white/60 backdrop-blur-xl rounded-3xl p-10 shadow-xl border border-white/40">
           <h1 className="text-5xl font-extrabold text-pink-600 mb-10 drop-shadow-sm text-center">
-            Your Wishlist 💗
+            Your Wishlist
           </h1>
 
           {wishlist.length === 0 ? (
@@ -20,7 +20,7 @@ export default function Wishlist() {
               <Link
                 to="/rocks"
                 className="inline-block mt-6 px-6 py-3 bg-pink-400 text-white rounded-2xl border-4 border-pink-500 shadow-[4px_4px_0px_#f9a8d4] hover:-translate-y-1 transition">
-                Find Cute Rocks ✨
+                Find Cute Rocks
               </Link>
             </div>
           ) : (
@@ -63,7 +63,7 @@ export default function Wishlist() {
                         border-4 border-purple-300 shadow-[4px_4px_0px_#c084fc]
                         hover:shadow-[6px_6px_0px_#a855f7] hover:-translate-y-1
                         transition-all duration-200">
-                      {rock.adopted ? "Already Adopted!" : "Adopt Me 💖"}
+                      {rock.adopted ? "Already Adopted!" : "Adopt Me"}
                     </Link>
                   </div>
                 </div>
