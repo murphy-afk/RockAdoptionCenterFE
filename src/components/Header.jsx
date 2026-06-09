@@ -6,7 +6,7 @@ import { BsBluesky } from "react-icons/bs";
 
 export default function Header() {
   return (
-    <header className="bg-gradient-to-r from-pink-200 to-purple-200 py-4 shadow-md border-b-4 border-purple-300 relative">
+    <header className="bg-linear-to-r from-pink-200 to-purple-200 py-4 shadow-md border-b-4 border-purple-300 fixed z-50 w-full top-0">
       <div className="absolute top-0 left-0 w-32 h-32 bg-pink-300 rounded-full blur-3xl opacity-30 -z-10"></div>
       <div className="absolute bottom-0 right-0 w-40 h-40 bg-purple-300 rounded-full blur-3xl opacity-30 -z-10"></div>
       <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">

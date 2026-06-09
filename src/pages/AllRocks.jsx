@@ -25,7 +25,7 @@ export default function AllRocks() {
   if (error) return <div className="text-center py-20 text-red-500">{error}</div>;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 my-3">
+    <div className="max-w-6xl mx-auto px-4 mt-30 mb-3">
   <div className="bg-white/60 backdrop-blur-xl rounded-3xl p-10 shadow-xl border border-white/40">
     <h1 className="text-6xl font-extrabold text-purple-700 mb-12 text-center drop-shadow-lg">
       Adopt a Pet Rock

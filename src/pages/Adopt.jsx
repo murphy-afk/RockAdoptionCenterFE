@@ -32,7 +32,7 @@ export default function AdoptRock() {
   if (!rock) return <div className="text-center py-20 text-xl">Loading...</div>;
 
   return (
-    <div className="max-w-6xl mx-auto px-4 my-3">
+    <div className="max-w-6xl mx-auto px-4 mt-30 mb-3">
       <div className="p-1 bg-purple-300 rounded-3xl shadow-[0_0_0_4px_#d8b4fe]">
         <div className="bg-white/60 backdrop-blur-xl rounded-3xl p-10 shadow-xl border border-white/40">
           <div className="w-full h-72 rounded-3xl overflow-hidden border-4 border-purple-200 bg-purple-100 mb-8">

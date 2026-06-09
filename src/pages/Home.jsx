@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-100 to-purple-200 relative overflow-hidden background">
+    <div className="mt-15 mb-3 min-h-screen bg-linear-to-b from-pink-100 to-purple-200 relative overflow-hidden background">
       <div className="max-w-5xl mx-auto px-6 py-20 relative z-10">
         <div className="bg-white/60 backdrop-blur-md rounded-3xl p-10 shadow-xl border border-white/40">
           <h1 className="text-6xl font-extrabold text-purple-700 drop-shadow-lg mb-6">

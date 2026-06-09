@@ -7,7 +7,7 @@ export default function Wishlist() {
   const { addToCart } = useCart();
 
   return (
-      <div className="max-w-6xl mx-auto relative z-10 my-3">
+      <div className="max-w-6xl mx-auto relative z-10 mt-30 mb-3">
         <div className="bg-white/60 backdrop-blur-xl rounded-3xl p-10 shadow-xl border border-white/40">
           <h1 className="text-5xl font-extrabold text-pink-600 mb-10 drop-shadow-sm text-center">
             Your Wishlist

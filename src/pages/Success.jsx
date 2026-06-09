@@ -25,7 +25,7 @@ export default function Success() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-4 my-3">
+    <div className="max-w-6xl mx-auto px-4 mt-30 mb-3">
       <div className="p-1 bg-purple-300 rounded-3xl shadow-[0_0_0_4px_#d8b4fe]">
         <div className="bg-white/60 backdrop-blur-xl rounded-3xl p-10 shadow-xl border border-white/40">
           <h1 className="text-5xl font-extrabold text-purple-700 mb-6 drop-shadow-sm flex items-center gap-3">

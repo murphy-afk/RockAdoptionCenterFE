@@ -33,7 +33,7 @@ export default function RockDetail() {
 
 
   return (
-    <div className="max-w-6xl mx-auto px-4 my-3">
+    <div className="max-w-6xl mx-auto px-4 mt-30 mb-3">
       <div className="bg-white/60 backdrop-blur-xl rounded-3xl p-10 shadow-xl border border-white/40">
 
         <div className="w-full h-80 rounded-3xl overflow-hidden border-4 border-purple-200 bg-linear-to-br from-pink-100 to-purple-100 mb-6">
